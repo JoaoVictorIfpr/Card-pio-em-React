@@ -1,55 +1,81 @@
 .menu-item {
-    display: flex;
-    border-bottom: 1px solid #eee;
-    padding: 15px;
-    align-items: center;
-    width: 400px; /* Largura base do item */
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 15px;
+  display: flex;
+  background-color: #242424;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+.item-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-right: 2px solid #f8b400;
+}
+
+.item-details {
+  padding: 1rem;
+  flex-grow: 1;
+}
+
+.item-details h3 {
+  margin: 0 0 0.5rem 0;
+  color: #f8b400;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.item-description {
+  margin: 0 0 0.75rem 0;
+  color: #e0e0e0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.item-price {
+  margin: 0;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.item-badge {
+  display: inline-block;
+  margin-right: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.7rem;
+  border-radius: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.vegetarian-badge {
+  background-color: #4caf50;
+  color: white;
+}
+
+.destaque-badge {
+  background-color: #f8b400;
+  color: #242424;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .menu-item {
+    flex-direction: column;
   }
   
   .item-image {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    margin-right: 15px;
-    border-radius: 5px;
+    width: 100%;
+    height: 180px;
+    border-right: none;
+    border-bottom: 2px solid #f8b400;
   }
-  
-  .item-details {
-    flex-grow: 1;
-  }
-  
-  .item-details h3 {
-    margin-top: 0;
-    margin-bottom: 5px;
-    color: #333;
-  }
-  
-  .item-description {
-    margin-bottom: 5px;
-    color: #666;
-    font-size: 0.9em;
-  }
-  
-  .item-price {
-    font-weight: bold;
-    color: #28a745; /* Cor verde para o preço */
-  }
-  
-  @media (max-width: 600px) {
-    .menu-item {
-      flex-direction: column;
-      align-items: flex-start;
-      width: 100%;
-    }
-  
-    .item-image {
-      width: 100%;
-      height: auto;
-      margin-bottom: 10px;
-      margin-right: 0;
-    }
-  }
+}

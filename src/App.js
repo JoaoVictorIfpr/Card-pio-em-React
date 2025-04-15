@@ -2,13 +2,12 @@ import React from 'react';
 import MenuItem from './components/MenuItem';
 import cardapio from './data';
 import './App.css';
+import Header from './components/Header';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Cardápio Simples</h1>
-      </header>
+      <Header />
       <main className="cardapio-container">
         {cardapio.map(item => (
           <MenuItem
