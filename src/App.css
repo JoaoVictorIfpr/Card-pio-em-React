@@ -10,10 +10,40 @@
   justify-content: center;
   align-items: center;
 }
+.cardapio-container .menu-item{
+  width: 40%;
+  height: 20vh;
+}
 
-@media (max-width: 768px) {
+@media (max-width: 850px) {
+  .cardapio-container .menu-item{
+    width: 40%;
+    height: 30vh;
+  }
+}
+
+@media (max-width: 600px) {
   .cardapio-container {
     flex-direction: column;
-    align-items: stretch;
+  }
+  .cardapio-container .menu-item{
+    width: 90%;
+    height: 30vh;
+    display: flex;
+    flex-direction: row;
+  }
+  .cardapio-container .menu-item .item-image{
+    width: 50%;
+  }
+}
+@media (max-width: 600px) {
+  .cardapio-container .menu-item{
+    width: 90%;
+    height: 40vh;
+    display: flex;
+    flex-direction: row;
+  }
+  .cardapio-container .menu-item .item-image{
+    width: 50%;
   }
 }

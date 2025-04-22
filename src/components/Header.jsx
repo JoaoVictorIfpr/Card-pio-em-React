@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Header.css';
 
 const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <header className="menu-header">
       <div className="container">
@@ -10,7 +16,13 @@ const Header = () => {
           <p>Sabor e qualidade em cada prato</p>
         </div>
         
-        <nav className="navigation">
+        <div className="menu-toggle" onClick={toggleMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        
+        <nav className={`navigation ${menuOpen ? 'menu-open' : ''}`}>
           <ul>
             <li><a href="#entradas">Entradas</a></li>
             <li><a href="#pratos-principais">Pratos Principais</a></li>
