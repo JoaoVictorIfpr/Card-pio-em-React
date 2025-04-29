@@ -11,11 +11,12 @@ function App() {
       <main className="cardapio-container">
         {cardapio.map(item => (
           <MenuItem
-            key={item.id} // A prop 'key' é importante quando renderizamos listas
+            key={item.id}
             nome={item.nome}
             descricao={item.descricao}
             preco={item.preco}
             imagem={item.imagem}
+            imagemWebp={item.imagemWebp} // Adicionando suporte à versão WebP
           />
         ))}
       </main>

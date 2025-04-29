@@ -1,49 +1,51 @@
-*{
+* {
   padding: 0;
   margin: 0;
   background-color: #242424;
 }
+
 .cardapio-container {
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-}
-.cardapio-container .menu-item{
-  width: 40%;
-  height: 20vh;
+  align-items: flex-start; /* Alterado para alinhar ao topo */
+  gap: 20px; /* Adicionado espaçamento consistente entre os itens */
+  max-width: 1200px; /* Limitar largura máxima em telas grandes */
+  margin: 0 auto; /* Centralizar horizontalmente */
 }
 
-@media (max-width: 850px) {
-  .cardapio-container .menu-item{
-    width: 40%;
-    height: 30vh;
+.cardapio-container .menu-item {
+  width: calc(33.33% - 20px); /* 3 itens por linha em telas grandes com gap */
+  min-height: 180px; /* Altura mínima em vez de altura fixa */
+  transition: all 0.3s ease; /* Transição suave entre breakpoints */
+}
+
+/* Telas grandes - Desktops */
+@media (max-width: 1100px) {
+  .cardapio-container .menu-item {
+    width: calc(50% - 20px); /* 2 itens por linha */
   }
 }
 
+/* Tablets e dispositivos médios */
+@media (max-width: 850px) {
+  .cardapio-container .menu-item {
+    width: calc(50% - 20px);
+    min-height: 200px;
+  }
+}
+
+/* Dispositivos pequenos - Mobile */
 @media (max-width: 600px) {
   .cardapio-container {
     flex-direction: column;
+    padding: 15px; /* Padding reduzido em telas menores */
   }
-  .cardapio-container .menu-item{
-    width: 90%;
-    height: 30vh;
-    display: flex;
-    flex-direction: row;
-  }
-  .cardapio-container .menu-item .item-image{
-    width: 50%;
-  }
-}
-@media (max-width: 600px) {
-  .cardapio-container .menu-item{
-    width: 90%;
-    height: 40vh;
-    display: flex;
-    flex-direction: row;
-  }
-  .cardapio-container .menu-item .item-image{
-    width: 50%;
+  
+  .cardapio-container .menu-item {
+    width: 100%; /* Largura completa em telas pequenas */
+    min-height: auto; /* Altura automática baseada no conteúdo */
+    margin-bottom: 15px; /* Espaçamento vertical entre itens */
   }
 }
