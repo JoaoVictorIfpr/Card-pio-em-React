@@ -13,6 +13,7 @@
   gap: 20px; /* Adicionado espaçamento consistente entre os itens */
   max-width: 1200px; /* Limitar largura máxima em telas grandes */
   margin: 0 auto; /* Centralizar horizontalmente */
+  padding-top: 30px; /* Adicionado espaço extra no topo do cardápio */
 }
 
 .cardapio-container .menu-item {
@@ -41,6 +42,7 @@
   .cardapio-container {
     flex-direction: column;
     padding: 15px; /* Padding reduzido em telas menores */
+    padding-top: 25px; /* Manter espaço extra no topo mesmo em telas pequenas */
   }
   
   .cardapio-container .menu-item {
