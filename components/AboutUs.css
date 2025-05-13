@@ -1,0 +1,269 @@
+.about-us-section {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    padding: 60px 0;
+    margin-top: 30px;
+    border-top: 3px solid #f8b400;
+  }
+  
+  .about-us-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .section-title {
+    text-align: center;
+    color: #f8b400;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    position: relative;
+  }
+  
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #f8b400;
+    margin: 15px auto 0;
+  }
+  
+  .about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 50px;
+  }
+  
+  .about-text {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .about-text h3 {
+    color: #f8b400;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+  }
+  
+  .about-text p {
+    margin-bottom: 25px;
+    line-height: 1.6;
+  }
+  
+  .about-stats {
+    flex: 1;
+    min-width: 300px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 20px;
+    background-color: #242424;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #f8b400;
+    margin-bottom: 5px;
+  }
+  
+  .stat-label {
+    font-size: 1rem;
+    color: #e0e0e0;
+  }
+  
+  .team-section {
+    margin-bottom: 50px;
+  }
+  
+  .team-section h3 {
+    color: #f8b400;
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+  
+  .team-members {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .team-member {
+    text-align: center;
+    width: 200px;
+    transition: transform 0.3s ease;
+  }
+  
+  .team-member:hover {
+    transform: translateY(-5px);
+  }
+  
+  .member-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #333;
+    margin: 0 auto 15px;
+    border: 3px solid #f8b400;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .member-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .team-member:hover .member-avatar {
+    border-color: #fff;
+    box-shadow: 0 0 15px rgba(248, 180, 0, 0.7);
+  }
+  
+  .team-member:hover .member-avatar img {
+    transform: scale(1.1);
+  }
+  
+  .team-member h4 {
+    color: #f8b400;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+  }
+  
+  .team-member p {
+    color: #cccccc;
+    font-style: italic;
+  }
+  
+  .testimonials {
+    margin-bottom: 50px;
+  }
+  
+  .testimonials h3 {
+    color: #f8b400;
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+  
+  .testimonial-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+  
+  blockquote {
+    background-color: #242424;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+    flex: 1;
+    min-width: 280px;
+    max-width: 500px;
+  }
+  
+  blockquote::before {
+    content: '"';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 60px;
+    color: rgba(248, 180, 0, 0.15);
+    font-family: Georgia, serif;
+  }
+  
+  blockquote cite {
+    display: block;
+    margin-top: 15px;
+    color: #f8b400;
+    font-style: normal;
+    text-align: right;
+  }
+  
+  .visit-us {
+    text-align: center;
+    padding: 30px;
+    background-color: #242424;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .visit-us h3 {
+    color: #f8b400;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+  }
+  
+  .visit-us p {
+    margin-bottom: 10px;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 2rem;
+    }
+    
+    .about-content {
+      flex-direction: column;
+      gap: 30px;
+    }
+    
+    .stat-number {
+      font-size: 2rem;
+    }
+    
+    .team-members {
+      gap: 20px;
+    }
+    
+    .member-avatar {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .about-us-section {
+      padding: 40px 0;
+    }
+    
+    .section-title {
+      font-size: 1.8rem;
+    }
+    
+    .about-stats {
+      gap: 20px;
+      padding: 15px;
+    }
+    
+    .stat-number {
+      font-size: 1.8rem;
+    }
+    
+    .team-member {
+      width: 150px;
+    }
+    
+    .member-avatar {
+      width: 80px;
+      height: 80px;
+    }
+  }

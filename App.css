@@ -1,0 +1,82 @@
+/* Estilo existente */
+* {
+  padding: 0;
+  margin: 0;
+  background-color: #242424;
+}
+
+.cardapio-container {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start; /* Alterado para alinhar ao topo */
+  gap: 20px; /* Adicionado espaçamento consistente entre os itens */
+  max-width: 1200px; /* Limitar largura máxima em telas grandes */
+  margin: 0 auto; /* Centralizar horizontalmente */
+  padding-top: 30px; /* Adicionado espaço extra no topo do cardápio */
+}
+
+.cardapio-container .menu-item {
+  width: calc(33.33% - 20px); /* 3 itens por linha em telas grandes com gap */
+  min-height: 180px; /* Altura mínima em vez de altura fixa */
+  transition: all 0.3s ease; /* Transição suave entre breakpoints */
+}
+
+/* Estilo para o fallback de carregamento do Suspense */
+.loading-fallback {
+  text-align: center;
+  padding: 40px 20px;
+  margin: 30px auto;
+  max-width: 800px;
+  border-radius: 8px;
+  background-color: #2a2a2a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: pulse 1.5s infinite alternate;
+}
+
+.loading-fallback p {
+  color: #f8b400;
+  font-size: 1.2rem;
+  font-weight: 500;
+  background-color: transparent;
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0.7;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Telas grandes - Desktops */
+@media (max-width: 1100px) {
+  .cardapio-container .menu-item {
+    width: calc(50% - 20px); /* 2 itens por linha */
+  }
+}
+
+/* Tablets e dispositivos médios */
+@media (max-width: 850px) {
+  .cardapio-container .menu-item {
+    width: calc(50% - 20px);
+    min-height: 200px;
+  }
+}
+
+/* Dispositivos pequenos - Mobile */
+@media (max-width: 600px) {
+  .cardapio-container {
+    flex-direction: column;
+    padding: 15px; /* Padding reduzido em telas menores */
+    padding-top: 25px; /* Manter espaço extra no topo mesmo em telas pequenas */
+  }
+  
+  .cardapio-container .menu-item {
+    width: 100%; /* Largura completa em telas pequenas */
+    min-height: auto; /* Altura automática baseada no conteúdo */
+    margin-bottom: 15px; /* Espaçamento vertical entre itens */
+  }
+}
