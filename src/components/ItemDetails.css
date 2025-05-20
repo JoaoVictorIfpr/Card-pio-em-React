@@ -1,0 +1,234 @@
+.item-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-right: 5px;
+  color: white;
+}
+
+.vegetarian-badge {
+  background-color: #27ae60;
+}
+
+.destaque-badge {
+  background-color: #f39c12;
+}
+
+.badges-container {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+/* Corrigindo problemas de estilo específicos */
+.App * {
+  background-color: inherit;
+}
+
+.App {
+  background-color: #242424;
+}
+
+/* Garantindo que o botão de contato tenha o estilo correto */
+.app-actions {
+  background-color: #242424;
+  padding: 10px 0;
+}
+
+.contact-button {
+  background-color: #f8b400;
+  color: #242424;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: bold;
+}
+
+.contact-button:hover {
+  background-color: #e67e22;
+}
+
+/* Ajustes para o modal de detalhes */
+.item-details-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.item-details-content {
+  background-color: #333;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.item-details-content * {
+  background-color: transparent;
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #f8b400;
+  z-index: 10;
+}
+
+.close-button:hover {
+  color: #fff;
+}
+
+/* Badge de destaque no modal */
+.item-details-header .destaque-badge {
+  position: absolute;
+  top: 10px;
+  right: 50px; /* Movido mais para a esquerda para evitar sobreposição com o botão fechar */
+  font-size: 12px;
+  padding: 4px 8px;
+}
+
+.item-details-header {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 15px;
+  position: relative; /* Para posicionamento do badge */
+}
+
+.item-details-header h2 {
+  margin: 0 0 10px 0;
+  font-size: 24px;
+  color: #f8b400;
+  padding-right: 100px; /* Espaço para o badge e botão fechar */
+}
+
+.add-to-cart-button {
+  background-color: #f8b400;
+  color: #242424;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: bold;
+}
+
+.add-to-cart-button:hover {
+  background-color: #e67e22;
+}
+
+/* Ajustes para a seção de contato */
+.contact-section {
+  padding: 40px 20px;
+  background-color: #242424;
+}
+
+.contact-section * {
+  background-color: transparent;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@media (min-width: 768px) {
+  .contact-container {
+    flex-direction: row;
+  }
+}
+
+.contact-info h2 {
+  font-size: 28px;
+  color: #f8b400;
+  margin-bottom: 20px;
+}
+
+.contact-info > p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ddd;
+  margin-bottom: 30px;
+}
+
+.info-item strong {
+  display: block;
+  font-size: 18px;
+  color: #f8b400;
+  margin-bottom: 5px;
+}
+
+.featured-items h3 {
+  font-size: 20px;
+  color: #f8b400;
+  margin-bottom: 15px;
+}
+
+.featured-item-price {
+  color: #f8b400;
+  font-weight: bold;
+}
+
+.contact-form-container {
+  flex: 1;
+  background-color: #333;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #f8b400;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 12px;
+  border: 1px solid #555;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #444;
+  color: #fff;
+}
+
+.submit-button {
+  background-color: #f8b400;
+  color: #242424;
+  border: none;
+  padding: 14px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.submit-button:hover {
+  background-color: #e67e22;
+}

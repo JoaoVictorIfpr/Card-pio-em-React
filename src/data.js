@@ -4,6 +4,10 @@ import saladaImg from './assets/images/salada.png';
 import lasanhaImg from './assets/images/lasanha.png';
 import sobremesaImg from './assets/images/sobremesa.png';
 import sucoImg from './assets/images/suco.png';
+// Novos imports para os novos itens
+import macarraoImg from './assets/images/macarrao.png';
+import cafeImg from './assets/images/cafe.png';
+import sanduicheImg from './assets/images/sanduiche.png';
 
 import hamburguerWebp from './assets/images/hamburguer.webp';
 import pizzaWebp from './assets/images/pizza.webp';
@@ -11,6 +15,10 @@ import saladaWebp from './assets/images/salada.webp';
 import lasanhaWebp from './assets/images/lasanha.webp';
 import sobremesaWebp from './assets/images/sobremesa.webp';
 import sucoWebp from './assets/images/suco.webp';
+// Novos imports para versões WebP dos novos itens
+import macarraoWebp from './assets/images/macarrao.webp';
+import cafeWebp from './assets/images/cafe.webp';
+import sanduicheWebp from './assets/images/sanduiche.webp';
 
 const cardapio = [
   {
@@ -19,7 +27,8 @@ const cardapio = [
     descricao: 'Pão artesanal, hambúrguer 180g, queijo, alface e molho especial.',
     preco: 25.90,
     imagem: hamburguerImg,
-    imagemWebp: hamburguerWebp
+    imagemWebp: hamburguerWebp,
+    destaque: true
   },
   {
     id: 2,
@@ -35,7 +44,8 @@ const cardapio = [
     descricao: 'Alface, frango grelhado, parmesão, croutons e molho caesar.',
     preco: 18.75,
     imagem: saladaImg,
-    imagemWebp: saladaWebp
+    imagemWebp: saladaWebp,
+    vegetariano: true
   },
   {
     id: 4,
@@ -60,6 +70,33 @@ const cardapio = [
     preco: 8.50,
     imagem: sucoImg,
     imagemWebp: sucoWebp
+  },
+  // Novos itens adicionados ao cardápio
+  {
+    id: 7,
+    nome: 'Macarrão ao Pesto',
+    descricao: 'Massa fresca com molho pesto caseiro, tomate cereja e parmesão.',
+    preco: 27.50,
+    imagem: macarraoImg,
+    imagemWebp: macarraoWebp,
+    destaque: true
+  },
+  {
+    id: 8,
+    nome: 'Café Espresso Duplo',
+    descricao: 'Café forte e encorpado com crema perfeita, grãos selecionados.',
+    preco: 6.90,
+    imagem: cafeImg,
+    imagemWebp: cafeWebp
+  },
+  {
+    id: 9,
+    nome: 'Sanduíche Vegetariano',
+    descricao: 'Pão integral, húmus, abacate, rúcula, tomate e queijo.',
+    preco: 19.90,
+    imagem: sanduicheImg,
+    imagemWebp: sanduicheWebp,
+    vegetariano: true
   }
 ];
 
