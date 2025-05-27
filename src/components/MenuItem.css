@@ -1,21 +1,4 @@
-.cardapio-container {
-  padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: stretch;
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-top: 30px;
-}
-
-.cardapio-container > div {
-  flex: 0 0 calc(33.33% - 30px);
-  min-width: 280px;
-  margin-bottom: 20px;
-}
-
+/* Estilos existentes */
 .menu-item {
   display: flex;
   background-color: #242424;
@@ -23,9 +6,8 @@
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 100%;
-  position: relative;
-  width: 100%;
+  height: 100%; /* Garante altura consistente */
+  position: relative; /* Para posicionamento dos badges */
 }
 
 .menu-item:hover {
@@ -35,12 +17,11 @@
 
 .item-image {
   width: 140px;
-  height: 140px;
+  height: 140px; /* Altura fixa para evitar CLS */
   object-fit: cover;
   border-right: 2px solid #f8b400;
-  transition: transform 0.5s ease;
-  content-visibility: auto;
-  flex-shrink: 0;
+  transition: transform 0.5s ease; /* Transição suave */
+  content-visibility: auto; /* Otimização de renderização */
 }
 
 .item-details {
@@ -48,8 +29,7 @@
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-width: 0; /* Importante para evitar overflow */
+  justify-content: space-between; /* Distribui o conteúdo verticalmente */
 }
 
 .item-details h3 {
@@ -57,8 +37,6 @@
   color: #f8b400;
   font-size: 1.2rem;
   font-weight: 600;
-  white-space: normal;
-  word-wrap: break-word;
 }
 
 .item-description {
@@ -66,11 +44,11 @@
   color: #e0e0e0;
   font-size: 0.9rem;
   line-height: 1.4;
+  /* Garante que descrições longas não quebrem o layout */
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 3; /* Limita a 3 linhas */
   -webkit-box-orient: vertical;
-  word-wrap: break-word;
 }
 
 .item-price {
@@ -78,8 +56,7 @@
   color: #ffffff;
   font-weight: 700;
   font-size: 1.1rem;
-  margin-top: auto;
-  white-space: nowrap;
+  margin-top: auto; /* Empurra o preço para o final do container */
 }
 
 /* Badges para vegetariano e destaque */
@@ -115,7 +92,7 @@
 /* Estilos para o estado de carregamento das imagens */
 .item-image.loading {
   position: relative;
-  background-color: #333;
+  background-color: #333;  /* Fundo escuro durante o carregamento */
   animation: skeleton-loading 1.5s infinite ease-in-out;
 }
 
@@ -152,18 +129,57 @@
   }
 }
 
-/* Responsividade */
-@media (max-width: 1100px) {
-  .cardapio-container > div {
-    flex: 0 0 calc(50% - 30px);
+/* Estilo para o fallback de carregamento do Suspense - refinado */
+.loading-fallback {
+  text-align: center;
+  padding: 40px 20px;
+  margin: 30px auto;
+  max-width: 800px;
+  border-radius: 8px;
+  background-color: #2a2a2a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: fade-pulse 1.5s infinite alternate;
+}
+
+.loading-fallback p {
+  color: #f8b400;
+  font-size: 1.2rem;
+  font-weight: 500;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.loading-fallback p::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #f8b400;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
   }
 }
 
-@media (max-width: 768px) {
-  .cardapio-container > div {
-    flex: 0 0 calc(50% - 20px);
+@keyframes fade-pulse {
+  from {
+    opacity: 0.8;
   }
-  
+  to {
+    opacity: 1;
+  }
+}
+
+/* Tablets */
+@media (max-width: 850px) {
   .item-image {
     width: 120px;
     height: 120px;
@@ -178,26 +194,29 @@
   }
 }
 
+/* Tablets pequenos e dispositivos médios */
+@media (max-width: 768px) {
+  .item-image {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+/* Dispositivos móveis */
 @media (max-width: 600px) {
-  .cardapio-container {
-    gap: 20px;
-  }
-  
-  .cardapio-container > div {
-    flex: 0 0 100%;
-    margin-bottom: 10px;
-  }
-  
   .menu-item {
-    flex-direction: row;
+    flex-direction: row; /* Mantém o layout horizontal em mobile */
   }
   
   .item-image {
     width: 100px;
     height: 100px;
+    border-right: 2px solid #f8b400;
+    border-bottom: none;
   }
   
   .item-details {
+    width: calc(100% - 100px);
     padding: 0.8rem;
   }
   
@@ -209,7 +228,7 @@
   .item-description {
     font-size: 0.8rem;
     margin-bottom: 0.5rem;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 2; /* Limita a 2 linhas em mobile */
   }
   
   .item-price {
@@ -217,9 +236,10 @@
   }
 }
 
+/* Dispositivos muito pequenos */
 @media (max-width: 375px) {
   .menu-item {
-    flex-direction: column;
+    flex-direction: column; /* Muda para layout vertical em telas muito pequenas */
   }
   
   .item-image {
@@ -227,5 +247,9 @@
     height: 140px;
     border-right: none;
     border-bottom: 2px solid #f8b400;
+  }
+  
+  .item-details {
+    width: auto;
   }
 }
